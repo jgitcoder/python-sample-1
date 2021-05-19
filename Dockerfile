@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY requirements.txt /usr/src/app/
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . /usr/src/app
-ENV PORT 8080
+ENV PORT 8081
 EXPOSE $PORT
 VOLUME ["/app-data"]
 CMD gunicorn -b :$PORT -c gunicorn.conf.py main:app
